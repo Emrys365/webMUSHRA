@@ -6,7 +6,28 @@
 
 a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikipedia.org/wiki/MUSHRA)) compliant web audio API based experiment software.
 
-<img width="1011" alt="screen shot 2017-03-08 at 12 38 20" src="https://cloud.githubusercontent.com/assets/72940/23702580/2a49bc82-03fc-11e7-99ea-22d550604a73.png">
+(Modified from the [kan-bayashi/webMUSHRA](https://github.com/kan-bayashi/webMUSHRA) repository)
+
+<img width="1011" alt="screen shot 2021-08-08 at 02 54 40" src="https://user-images.githubusercontent.com/18532145/128611084-57d4f393-a14e-4d8f-9929-552b7f11dc37.png">
+
+> ## New features
+> 
+> 1. Add a new page type: [MultiMetricMushraPage](lib/webmushra/pages/LikertSingleStimulusPageManager.js).
+> <br/>As shown above, this new page supports evaluating multiple metrics for each audio sample.
+> <br/>And users can easily navigate between different tabs by using the shortcuts `[` and `]`.
+>   * Several new options are added:
+>     * `colors`: a list of colors (HEX) corresponding to the background color of each metric tab.
+>     * `content`: a list of documentation corresponding to each metric.
+>     * `language`: the locale code, e.g. "en" and "cn".
+>     * `metrics`: a list of metrics to be evaluated.
+>     * `mustPlayAll`: If true, the Next button will be disabled until all audios have been played.
+>     * `mustViewAllTabs`: If true, the Next button will be disabled until all tabs have been viewed.
+> 
+> <br/>In addition, the page number (i.e. `[page_index]/[total_page]`) in the page title will be automatically re-indexed for handling the randomized page order.
+> 
+> 2. Support opening the shortcuts cheatsheet on specific pages with the shortcut `/`.
+> <br/>Currently supported page(s): [MultiMetricMushraPage](lib/webmushra/pages/LikertSingleStimulusPageManager.js)
+> <br/><details><summary>Expand to see an example</summary><div><img width="1011" alt="screen shot 2021-08-08 at 03 08 42" src="https://user-images.githubusercontent.com/18532145/128611385-1273d5d9-2d7a-4a28-9f57-169aaf434035.png"/></div></details>
 
 ## Introduction
 

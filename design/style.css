@@ -243,3 +243,59 @@ li{
 	margin-left:25%;
 }
 
+/********************
+      Tab style
+*********************/
+/* Style the tab */
+div.tab {
+  overflow: hidden;
+  /* border: 1px solid #ccc; */
+  /* background-color: #f1f1f1; */
+  display:inline-flex; /* force tabs in one line */
+  float: left;
+}
+
+/* Style the buttons inside the tab */
+.tablinks {
+  background-color: #f1f1f1;
+  float: left;
+  /* border: none;
+  border-radius:35px; */
+  border: 1px solid #999;
+  border-radius: 15px 15px 0 0;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  width: 100px;
+  height: 20px;
+  position: relative;
+  /* transition: 0.3s; */
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: none;
+}
+
+/* Change background color of buttons on hover */
+/* div.tab button:hover {
+  background-color: #DDD;
+} */
+
+/* Create an active/current tablink class */
+.tablinks.active {
+  color: #FFF;
+  background-color: #ED8C01;
+  /* color: #fff; */
+  border-bottom: 1px solid transparent;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: 2px solid #999;
+  /* border: none; */
+  /* border: 1px solid #ccc; */
+  /* border-top: none; */
+  text-align: left;
+}

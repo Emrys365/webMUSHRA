@@ -59,6 +59,7 @@ will be prosecuted to the maximum extent possible under law.
     <!-- audio -->
     <script src="lib/webmushra/audio/AudioFileLoader.js"></script>
     <script src="lib/webmushra/audio/MushraAudioControl.js"></script>
+    <script src="lib/webmushra/audio/MultiMetricMushraAudioControl.js"></script>
     <script src="lib/webmushra/audio/GenericAudioControl.js"></script>
 
     <!-- business -->
@@ -69,6 +70,7 @@ will be prosecuted to the maximum extent possible under law.
 
     <!-- control -->
     <script src="lib/webmushra/control/MushraAudioControlInputController.js"></script>
+    <script src="lib/webmushra/control/MultiMetricMushraAudioControlInputController.js"></script>
     <script src="lib/webmushra/control/BS1116AudioControlInputController.js"></script>
     <script src="lib/webmushra/control/FilePlayerController.js"></script>
     <script src="lib/webmushra/control/InputController.js"></script>
@@ -109,6 +111,7 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/webmushra/pages/FinishPage.js"></script>
     <script src="lib/webmushra/pages/GenericPage.js"></script>
     <script src="lib/webmushra/pages/MushraPage.js"></script>
+    <script src="lib/webmushra/pages/MultiMetricMushraPage.js"></script>
     <script src="lib/webmushra/pages/PairedComparisonPage.js"></script>
     <script src="lib/webmushra/pages/PairedComparisonPageManager.js"></script>
     <script src="lib/webmushra/pages/VolumePage.js"></script>
@@ -123,7 +126,7 @@ will be prosecuted to the maximum extent possible under law.
     <!-- import config -->
     <script src="lib/external/yaml/yaml.min.js"></script>
 
-    <link rel="stylesheet" href="design/style.css">
+    <link rel="stylesheet" href="design/style.css" type="text/css" id="style_css" >
   </head>
 
   <body data-theme="a">
@@ -169,6 +172,14 @@ will be prosecuted to the maximum extent possible under law.
     <div id="popupResultsContent" style="background-color: white;" class="ui-corner-bottom ui-content">
     </div>
 	</div>
+
+  <div data-role="popup" data-history="false" data-position-to="window" data-transition="pop" id="shortcutsPopupCard" data-overlay-theme="b" data-theme="c" data-dismissible="true" class="ui-corner-all">
+      <div data-role="header" class="ui-corner-top"  style="background-color: #FFb500;">
+        <h1 id="shortcutsPopHeader">Shortcuts</h1>
+      </div>
+    <div id="popupShortcuts" style="background-color: white;" class="ui-corner-bottom ui-content">
+    </div>
+  </div>
     <!-- build:js:generic startup.min.js -->
     <script src="startup.js"></script>
     <!-- /build -->

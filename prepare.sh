@@ -14,6 +14,8 @@ fi
 ./bin/generate_enh_config_en.py \
     --sample_audio_path configs/resources/wavs_stereo/close_talk/F05_440C0206_STR_REAL.wav \
     --seed 777 \
+    --metrics MOS,S-MOS,N-MOS \
+    --random True \
     --ref_root_wav_dir ./configs/resources/wavs_stereo/close_talk \
     --test_root_wav_dir ./configs/resources/wavs_stereo/{wav,mc_conv_tasnet,beam_tasnet_sig,beam_tasnet_vad_mask,joint_mc_conv_tasnet_asr} \
     --outpath ./configs/enh_quality_MOS_sample.yaml

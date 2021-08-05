@@ -48,7 +48,7 @@ array_push($mushraCsvData, $input);
  
  
  foreach ($session->trials as $trial) {
-  if ($trial->type == "mushra") {
+  if ($trial->type == "mushra" || $trial->type == "multi_metric_mushra") {
 	$write_mushra = true;
 
 	  foreach ($trial->responses as $response) {

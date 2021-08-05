@@ -66,6 +66,7 @@ function callbackURLFound() {
 }
 
 function addPagesToPageManager(_pageManager, _pages) {
+  var pageCount = 0;
   for (var i = 0; i < _pages.length; ++i) {
     if (Array.isArray(_pages[i])) {
       if (_pages[i][0] === "random") {
@@ -81,23 +82,33 @@ function addPagesToPageManager(_pageManager, _pages) {
         var volumePage = new VolumePage(_pageManager, audioContext, audioFileLoader, pageConfig, config.bufferSize, errorHandler, config.language);
         _pageManager.addPage(volumePage);
       } else if (pageConfig.type == "mushra") {
+        pageCount++;
         var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
         _pageManager.addPage(mushraPage);
+      }  else if (pageConfig.type == "multi_metric_mushra") {
+        pageCount++;
+        var multiMetricMushraPage = new MultiMetricMushraPage(_pageManager, pageTemplateRenderer, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language, pageCount);
+        _pageManager.addPage(multiMetricMushraPage);
       } else if ( pageConfig.type == "spatial"){
+        pageCount++;
         _pageManager.addPage(new SpatialPage(_pageManager, pageConfig, session, audioContext, config.bufferSize, audioFileLoader, errorHandler, config.language));
       } else if (pageConfig.type == "paired_comparison") {
+        pageCount++;
         var pcPageManager = new PairedComparisonPageManager();
         pcPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         pcPageManager = null;
       } else if (pageConfig.type == "bs1116") {
+        pageCount++;
         var bs1116PageManager = new BS1116PageManager();
         bs1116PageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         bs1116PageManager = null;
       } else if (pageConfig.type == "likert_single_stimulus") {
+        pageCount++;
         var likertSingleStimulusPageManager = new LikertSingleStimulusPageManager();
         likertSingleStimulusPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         likertSingleStimulusPageManager = null;
       } else if (pageConfig.type == "likert_multi_stimulus") {
+        pageCount++;
         var likertMultiStimulusPage = new LikertMultiStimulusPage(pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
         _pageManager.addPage(likertMultiStimulusPage);
       } else if (pageConfig.type == "finish") {
@@ -132,7 +143,7 @@ function startup(config) {
   $.mobile.page.prototype.options.theme = 'a';
   var interval = setInterval(function() {
     $.mobile.loading("show", {
-      text : "Loading...",
+      text : "Loading... (This may take some time)",
       textVisible : true,
       theme : "a",
       html : ""

@@ -11,10 +11,21 @@ pages:
       id: first_page
       name: Welcome
       content: Welcome to webMUSHRA!       
-    - type: mushra
+    - type: multi_metric_mushra
       id: trial1
       name: MUSHRA
-      content: This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition.
+      metrics:
+          - MOS
+          - S-MOS
+          - N-MOS
+      colors:
+          - '#ED8C01'
+          - '#007ACC'
+          - '#2f9b5c'
+      content:
+          - "(MOS) This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition."
+          - "(S-MOS) This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition."
+          - "(N-MOS) This training shows how to use our user interface. Please perform the underlined instructions to proceed with the training session. Reminder: In a MUSHRA listening test you are asked to rate the Basic Audio Quality (BAQ) of each condition.<br/>Basic Audio Quality is a single and global attribute that is used to judge any and all detected differences between the reference and the condition."
       showWaveform: true
       enableLooping: true 
       reference: configs/resources/audio/mono_ref.wav
@@ -26,10 +37,21 @@ pages:
           C3: configs/resources/audio/mono_c3.wav
     - 
           - random
-          - type: mushra
+          - type: multi_metric_mushra
             id: trial_random_1
             name: MUSHRA - Random 2
-            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+            metrics:
+                - MOS
+                - S-MOS
+                - N-MOS
+            colors:
+                - '#ED8C01'
+                - '#007ACC'
+                - '#2f9b5c'
+            content:
+                - (MOS) Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+                - (S-MOS) Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+                - (N-MOS) Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
             enableLooping: true 
             reference: configs/resources/audio/mono_ref.wav
             createAnchor35: false
@@ -38,10 +60,21 @@ pages:
                 C1: configs/resources/audio/mono_c1.wav
                 C2: configs/resources/audio/mono_c2.wav
                 C3: configs/resources/audio/mono_c3.wav          
-          - type: mushra
+          - type: multi_metric_mushra
             id: trial_random_2
             name: MUSHRA - Random 1
-            content: Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+            metrics:
+                - MOS
+                - S-MOS
+                - N-MOS
+            colors:
+                - '#ED8C01'
+                - '#007ACC'
+                - '#2f9b5c'
+            content:
+                - (MOS) Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+                - (S-MOS) Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
+                - (N-MOS) Due to randomization, this page will be either the second MUSHRA page or the third MUSHRA page.
             enableLooping: true 
             reference: configs/resources/audio/mono_ref.wav
             createAnchor35: false
