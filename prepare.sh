@@ -12,7 +12,7 @@ fi
 
 # Generate config
 ./bin/generate_enh_config.py \
-    --sample_audio_path configs/resources/wavs_stereo/close_talk/F05_440C0206_STR_REAL.wav \
+    --sample_audio_path configs/resources/wavs_stereo/close_talk/F05_445C0214_STR_REAL.wav \
     --seed 777 \
     --language en \
     --metrics MOS,S-MOS,N-MOS \

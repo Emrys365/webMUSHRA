@@ -25,7 +25,7 @@ pages:
     USE HEADPHONES AND WORK IN A QUIET ROOM.</strong>
   defaultVolume: 1.0
   id: Volume check
-  stimulus: configs/resources/wavs_stereo/close_talk/F05_440C0206_STR_REAL.wav
+  stimulus: configs/resources/wavs_stereo/close_talk/F05_445C0214_STR_REAL.wav
   type: volume
 -
   - random
@@ -55,7 +55,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M06_440C0202_CAF_REAL
+    id: close_talk_M06_440C020J_PED_REAL
     metrics:
     - MOS
     - S-MOS
@@ -64,7 +64,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (1/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M06_440C0202_CAF_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/M06_440C020J_PED_REAL.wav
     response:
     -
       - Excellent
@@ -86,13 +86,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M06_440C0202_CAF_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M06_440C0202_CAF_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M06_440C0202_CAF_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M06_440C0202_CAF_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M06_440C0202_CAF_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M06_440C0202_CAF_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M06_440C0202_CAF_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M06_440C020J_PED_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M06_440C020J_PED_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M06_440C020J_PED_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/M06_440C020J_PED_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M06_440C020J_PED_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M06_440C020J_PED_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/M06_440C020J_PED_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -120,7 +120,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_F05_443C020N_CAF_REAL
+    id: close_talk_F05_444C020F_BUS_REAL
     metrics:
     - MOS
     - S-MOS
@@ -129,7 +129,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (2/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F05_443C020N_CAF_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/F05_444C020F_BUS_REAL.wav
     response:
     -
       - Excellent
@@ -151,13 +151,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_443C020N_CAF_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_443C020N_CAF_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_443C020N_CAF_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_443C020N_CAF_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_443C020N_CAF_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_443C020N_CAF_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F05_443C020N_CAF_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_444C020F_BUS_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_444C020F_BUS_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_444C020F_BUS_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_444C020F_BUS_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_444C020F_BUS_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_444C020F_BUS_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/F05_444C020F_BUS_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -185,7 +185,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_F05_445C020O_BUS_REAL
+    id: close_talk_F05_445C0214_STR_REAL
     metrics:
     - MOS
     - S-MOS
@@ -194,7 +194,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (3/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F05_445C020O_BUS_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/F05_445C0214_STR_REAL.wav
     response:
     -
       - Excellent
@@ -216,13 +216,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_445C020O_BUS_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_445C020O_BUS_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_445C020O_BUS_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_445C020O_BUS_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_445C020O_BUS_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_445C020O_BUS_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F05_445C020O_BUS_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_445C0214_STR_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_445C0214_STR_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_445C0214_STR_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_445C0214_STR_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_445C0214_STR_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_445C0214_STR_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/F05_445C0214_STR_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -250,7 +250,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M05_441C020L_BUS_REAL
+    id: close_talk_F06_443C0210_STR_REAL
     metrics:
     - MOS
     - S-MOS
@@ -259,7 +259,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (4/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_441C020L_BUS_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/F06_443C0210_STR_REAL.wav
     response:
     -
       - Excellent
@@ -281,13 +281,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_441C020L_BUS_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_441C020L_BUS_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_441C020L_BUS_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_441C020L_BUS_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_441C020L_BUS_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_441C020L_BUS_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_441C020L_BUS_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F06_443C0210_STR_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F06_443C0210_STR_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F06_443C0210_STR_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/F06_443C0210_STR_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_443C0210_STR_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_443C0210_STR_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/F06_443C0210_STR_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -315,7 +315,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M05_443C020S_STR_REAL
+    id: close_talk_M05_443C020O_BUS_REAL
     metrics:
     - MOS
     - S-MOS
@@ -324,7 +324,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (5/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_443C020S_STR_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/M05_443C020O_BUS_REAL.wav
     response:
     -
       - Excellent
@@ -346,13 +346,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_443C020S_STR_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_443C020S_STR_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_443C020S_STR_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_443C020S_STR_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_443C020S_STR_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_443C020S_STR_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_443C020S_STR_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_443C020O_BUS_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_443C020O_BUS_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_443C020O_BUS_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_443C020O_BUS_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_443C020O_BUS_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_443C020O_BUS_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/M05_443C020O_BUS_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -380,7 +380,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M05_442C0205_PED_REAL
+    id: close_talk_M05_440C0208_CAF_REAL
     metrics:
     - MOS
     - S-MOS
@@ -389,7 +389,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (6/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_442C0205_PED_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/M05_440C0208_CAF_REAL.wav
     response:
     -
       - Excellent
@@ -411,13 +411,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_442C0205_PED_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_442C0205_PED_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_442C0205_PED_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_442C0205_PED_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_442C0205_PED_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_442C0205_PED_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_442C0205_PED_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_440C0208_CAF_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_440C0208_CAF_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_440C0208_CAF_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_440C0208_CAF_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_440C0208_CAF_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_440C0208_CAF_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/M05_440C0208_CAF_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -445,7 +445,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M06_447C0210_CAF_REAL
+    id: close_talk_M06_442C020Y_CAF_REAL
     metrics:
     - MOS
     - S-MOS
@@ -454,7 +454,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (7/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M06_447C0210_CAF_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/M06_442C020Y_CAF_REAL.wav
     response:
     -
       - Excellent
@@ -476,13 +476,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M06_447C0210_CAF_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M06_447C0210_CAF_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M06_447C0210_CAF_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M06_447C0210_CAF_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M06_447C0210_CAF_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M06_447C0210_CAF_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M06_447C0210_CAF_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M06_442C020Y_CAF_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M06_442C020Y_CAF_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M06_442C020Y_CAF_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/M06_442C020Y_CAF_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M06_442C020Y_CAF_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M06_442C020Y_CAF_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/M06_442C020Y_CAF_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -510,7 +510,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_F05_440C0206_STR_REAL
+    id: close_talk_F05_441C020E_CAF_REAL
     metrics:
     - MOS
     - S-MOS
@@ -519,7 +519,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (8/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F05_440C0206_STR_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/F05_441C020E_CAF_REAL.wav
     response:
     -
       - Excellent
@@ -541,13 +541,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_440C0206_STR_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_440C0206_STR_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_440C0206_STR_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_440C0206_STR_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_440C0206_STR_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_440C0206_STR_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F05_440C0206_STR_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_441C020E_CAF_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_441C020E_CAF_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_441C020E_CAF_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_441C020E_CAF_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_441C020E_CAF_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_441C020E_CAF_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/F05_441C020E_CAF_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -575,7 +575,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M05_447C0214_CAF_REAL
+    id: close_talk_M05_446C0202_STR_REAL
     metrics:
     - MOS
     - S-MOS
@@ -584,7 +584,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (9/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_447C0214_CAF_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/M05_446C0202_STR_REAL.wav
     response:
     -
       - Excellent
@@ -606,13 +606,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_447C0214_CAF_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_447C0214_CAF_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_447C0214_CAF_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_447C0214_CAF_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_447C0214_CAF_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_447C0214_CAF_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_447C0214_CAF_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_446C0202_STR_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_446C0202_STR_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_446C0202_STR_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_446C0202_STR_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_446C0202_STR_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_446C0202_STR_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/M05_446C0202_STR_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -640,7 +640,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M05_440C020I_PED_REAL
+    id: close_talk_F06_441C020S_CAF_REAL
     metrics:
     - MOS
     - S-MOS
@@ -649,7 +649,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (10/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_440C020I_PED_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/F06_441C020S_CAF_REAL.wav
     response:
     -
       - Excellent
@@ -671,13 +671,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_440C020I_PED_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_440C020I_PED_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_440C020I_PED_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_440C020I_PED_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_440C020I_PED_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_440C020I_PED_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_440C020I_PED_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F06_441C020S_CAF_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F06_441C020S_CAF_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F06_441C020S_CAF_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/F06_441C020S_CAF_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_441C020S_CAF_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_441C020S_CAF_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/F06_441C020S_CAF_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -705,7 +705,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M05_442C0206_PED_REAL
+    id: close_talk_M05_442C0214_STR_REAL
     metrics:
     - MOS
     - S-MOS
@@ -714,7 +714,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (11/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_442C0206_PED_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/M05_442C0214_STR_REAL.wav
     response:
     -
       - Excellent
@@ -736,13 +736,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_442C0206_PED_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_442C0206_PED_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_442C0206_PED_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_442C0206_PED_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_442C0206_PED_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_442C0206_PED_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_442C0206_PED_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_442C0214_STR_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_442C0214_STR_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_442C0214_STR_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_442C0214_STR_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_442C0214_STR_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_442C0214_STR_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/M05_442C0214_STR_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -770,7 +770,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M05_441C020B_STR_REAL
+    id: close_talk_F06_441C0210_PED_REAL
     metrics:
     - MOS
     - S-MOS
@@ -779,7 +779,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (12/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_441C020B_STR_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/F06_441C0210_PED_REAL.wav
     response:
     -
       - Excellent
@@ -801,13 +801,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_441C020B_STR_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_441C020B_STR_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_441C020B_STR_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_441C020B_STR_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_441C020B_STR_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_441C020B_STR_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_441C020B_STR_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F06_441C0210_PED_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F06_441C0210_PED_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F06_441C0210_PED_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/F06_441C0210_PED_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_441C0210_PED_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_441C0210_PED_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/F06_441C0210_PED_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -835,7 +835,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M06_442C020O_STR_REAL
+    id: close_talk_M06_441C0203_PED_REAL
     metrics:
     - MOS
     - S-MOS
@@ -844,7 +844,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (13/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M06_442C020O_STR_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/M06_441C0203_PED_REAL.wav
     response:
     -
       - Excellent
@@ -866,13 +866,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M06_442C020O_STR_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M06_442C020O_STR_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M06_442C020O_STR_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M06_442C020O_STR_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M06_442C020O_STR_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M06_442C020O_STR_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M06_442C020O_STR_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M06_441C0203_PED_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M06_441C0203_PED_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M06_441C0203_PED_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/M06_441C0203_PED_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M06_441C0203_PED_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M06_441C0203_PED_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/M06_441C0203_PED_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -900,7 +900,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_M05_441C020M_BUS_REAL
+    id: close_talk_F06_446C0204_BUS_REAL
     metrics:
     - MOS
     - S-MOS
@@ -909,7 +909,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (14/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_441C020M_BUS_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/F06_446C0204_BUS_REAL.wav
     response:
     -
       - Excellent
@@ -931,13 +931,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_441C020M_BUS_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_441C020M_BUS_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_441C020M_BUS_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_441C020M_BUS_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_441C020M_BUS_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_441C020M_BUS_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_441C020M_BUS_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F06_446C0204_BUS_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F06_446C0204_BUS_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F06_446C0204_BUS_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/F06_446C0204_BUS_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_446C0204_BUS_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_446C0204_BUS_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/F06_446C0204_BUS_REAL.wav
     type: multi_metric_mushra
   - colors:
     - '#ED8C01'
@@ -965,7 +965,7 @@ pages:
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
-    id: close_talk_F06_440C020U_CAF_REAL
+    id: close_talk_F06_441C020C_PED_REAL
     metrics:
     - MOS
     - S-MOS
@@ -974,7 +974,7 @@ pages:
     mustViewAllTabs: true
     name: Speech Enhancement Quality Evaluation (15/15)
     randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F06_440C020U_CAF_REAL.wav
+    reference: ./configs/resources/wavs_stereo/close_talk/F06_441C020C_PED_REAL.wav
     response:
     -
       - Excellent
@@ -996,13 +996,13 @@ pages:
       - Very Intrusive
     showConditionNames: false
     stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F06_440C020U_CAF_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F06_440C020U_CAF_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F06_440C020U_CAF_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F06_440C020U_CAF_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_440C020U_CAF_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_440C020U_CAF_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F06_440C020U_CAF_REAL.wav
+      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F06_441C020C_PED_REAL.wav
+      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F06_441C020C_PED_REAL.wav
+      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F06_441C020C_PED_REAL.wav
+      fasnet: ./configs/resources/wavs_stereo/fasnet/F06_441C020C_PED_REAL.wav
+      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_441C020C_PED_REAL.wav
+      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_441C020C_PED_REAL.wav
+      wav: ./configs/resources/wavs_stereo/wav/F06_441C020C_PED_REAL.wav
     type: multi_metric_mushra
 - content: The evaluation was finished.<br>Please enter your <strong>name</strong>.
     <br>Please click [send Results] button.
