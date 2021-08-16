@@ -19,6 +19,7 @@ fi
     --random True \
     --ref_root_wav_dir ./configs/resources/wavs_stereo/close_talk \
     --test_root_wav_dir ./configs/resources/wavs_stereo/{wav,blstm_mvdr,fasnet,mc_conv_tasnet,beam_tasnet_sig,beam_tasnet_vad_mask,joint_mc_conv_tasnet_asr} \
+    --exclude-uid {F05_441C020E_CAF_REAL,F05_444C020F_BUS_REAL,F06_441C020C_PED_REAL,M06_441C0203_PED_REAL,M05_443C020O_BUS_REAL} \
     --outpath ./configs/enh_quality_MOS_sample.yaml
 
 echo "Run the following command to launch WebMUSHRA:"

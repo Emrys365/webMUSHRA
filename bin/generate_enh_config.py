@@ -39,7 +39,8 @@ METRICS = {
                   "Undistorted speech without noticeable noise is corresponding to 100."
                   "<br><br>"
                   "<strong>Note:</strong> The reference audio might also contain some noise. "
-                  "And it is preferred if the noise is further suppressed in the processed audios.",
+                  "And it is preferred if the noise is further suppressed in the processed audios."
+                  "<br><br>",
             "cn": "分别播放 reference 和处理后的音频，然后对处理后的音频的"
                   "<font color=\"red\">整体质量</font>进行评估，即"
                   "其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。"
@@ -47,7 +48,8 @@ METRICS = {
                   "伴随着强干扰性噪声，且高度失真的语音，相应的得分是 0。"
                   "几乎没有噪声，且无失真的语音，相应的得分是 100。"
                   "<br><br>"
-                  "<strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。",
+                  "<strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。"
+                  "<br><br>",
         },
     }, 
     "S-MOS": {
@@ -63,7 +65,8 @@ METRICS = {
                   "Undistorted speech is corresponding to 100."
                   "<br><br>"
                   "<strong>Note:</strong> Please <u>do not take account of the background noise</u> "
-                  "when evaluating S-MOS.",
+                  "when evaluating S-MOS."
+                  "<br><br>",
             "cn": "分别播放 reference 和处理后的音频，然后<strong>仅</strong>对"
                   "处理后的音频中的<font color=\"red\">语音质量</font>进行评估，即"
                   "其中的语音信号是否很好地保留（无失真）。"
@@ -71,7 +74,8 @@ METRICS = {
                   "高度失真的语音，相应的得分是 0。"
                   "没有任何失真的语音，相应的得分是 100。"
                   "<br><br>"
-                  "<strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。",
+                  "<strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。"
+                  "<br><br>",
         },
     },
     "N-MOS": {
@@ -86,8 +90,12 @@ METRICS = {
                   "Very intrusive noise is corresponding to 0. "
                   "Unnoticable noise is corresponding to 100."
                   "<br><br>"
-                  "<strong>Note:</strong> Please <u>do not take account of the speech quality</u> "
-                  "when evaluating N-MOS.",
+                  "<strong>Note 1:</strong> Please <u>do not take account of the speech quality</u> "
+                  "when evaluating N-MOS."
+                  "<br>"
+                  "<strong>Note 2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> "
+                  "(not absolute) noise volume compared to the speech, becuase the absolute volume "
+                  "of different audios may not be exactly the same.",
             "cn": "分别播放 reference 和处理后的音频，然后<strong>仅</strong>对"
                   "处理后的音频中的<font color=\"red\">噪声级别</font>进行评估，即"
                   "其中的背景噪声是否很好地被抑制。"
@@ -95,7 +103,10 @@ METRICS = {
                   "强干扰性噪声，相应的得分是 0。"
                   "几乎无噪声，相应的得分是 100。"
                   "<br><br>"
-                  "<strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。",
+                  "<strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。"
+                  "<br>"
+                  "<strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）"
+                  "来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。",
         },
     },
 }
@@ -340,6 +351,7 @@ def main():
     parser.add_argument("--sample_audio_path", default=None, type=str, nargs="+")
     parser.add_argument("--ref_root_wav_dir", default=None, type=str)
     parser.add_argument("--test_root_wav_dir", required=True, type=str, nargs="+")
+    parser.add_argument("--exclude-uid", default=None, type=str, nargs="+")
     parser.add_argument("--outpath", required=True, type=str)
     parser.add_argument("--metrics", default="MOS", type=str2triple_str)
     parser.add_argument("--seed", default=777, type=int)
@@ -388,6 +400,8 @@ def main():
         evaluation_pages = ["random"]
     else:
         evaluation_pages = []
+    if args.exclude_uid is not None:
+        uttids = [uid for uid in uttids if uid not in args.exclude_uid]
     for idx, uid in enumerate(uttids, 1):
         print('uid: ', uid)
         evaluation_pages.append(

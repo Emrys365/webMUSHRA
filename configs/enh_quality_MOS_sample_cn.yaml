@@ -26,11 +26,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -41,7 +41,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (1/15)
+    name: 语音增强质量评测 (1/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M06_440C020J_PED_REAL.wav
     response:
@@ -79,64 +79,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_F05_444C020F_BUS_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: 语音增强质量评测 (2/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F05_444C020F_BUS_REAL.wav
-    response:
-    -
-      - 很好
-      - 好
-      - 较好
-      - 较差
-      - 差
-    -
-      - 无失真
-      - 轻微失真
-      - 较失真
-      - 相当失真
-      - 极度失真
-    -
-      - 几乎无噪声
-      - 轻微噪声
-      - 有噪声但无干扰性
-      - 有一定干扰性
-      - 强干扰噪声
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_444C020F_BUS_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_444C020F_BUS_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_444C020F_BUS_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_444C020F_BUS_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_444C020F_BUS_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_444C020F_BUS_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F05_444C020F_BUS_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -147,7 +94,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (3/15)
+    name: 语音增强质量评测 (2/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F05_445C0214_STR_REAL.wav
     response:
@@ -185,11 +132,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -200,7 +147,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (4/15)
+    name: 语音增强质量评测 (3/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F06_443C0210_STR_REAL.wav
     response:
@@ -238,64 +185,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_M05_443C020O_BUS_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: 语音增强质量评测 (5/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_443C020O_BUS_REAL.wav
-    response:
-    -
-      - 很好
-      - 好
-      - 较好
-      - 较差
-      - 差
-    -
-      - 无失真
-      - 轻微失真
-      - 较失真
-      - 相当失真
-      - 极度失真
-    -
-      - 几乎无噪声
-      - 轻微噪声
-      - 有噪声但无干扰性
-      - 有一定干扰性
-      - 强干扰噪声
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_443C020O_BUS_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_443C020O_BUS_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_443C020O_BUS_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_443C020O_BUS_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_443C020O_BUS_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_443C020O_BUS_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_443C020O_BUS_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -306,7 +200,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (6/15)
+    name: 语音增强质量评测 (4/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M05_440C0208_CAF_REAL.wav
     response:
@@ -344,11 +238,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -359,7 +253,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (7/15)
+    name: 语音增强质量评测 (5/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M06_442C020Y_CAF_REAL.wav
     response:
@@ -397,64 +291,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_F05_441C020E_CAF_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: 语音增强质量评测 (8/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F05_441C020E_CAF_REAL.wav
-    response:
-    -
-      - 很好
-      - 好
-      - 较好
-      - 较差
-      - 差
-    -
-      - 无失真
-      - 轻微失真
-      - 较失真
-      - 相当失真
-      - 极度失真
-    -
-      - 几乎无噪声
-      - 轻微噪声
-      - 有噪声但无干扰性
-      - 有一定干扰性
-      - 强干扰噪声
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_441C020E_CAF_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_441C020E_CAF_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_441C020E_CAF_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_441C020E_CAF_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_441C020E_CAF_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_441C020E_CAF_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F05_441C020E_CAF_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -465,7 +306,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (9/15)
+    name: 语音增强质量评测 (6/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M05_446C0202_STR_REAL.wav
     response:
@@ -503,11 +344,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -518,7 +359,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (10/15)
+    name: 语音增强质量评测 (7/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F06_441C020S_CAF_REAL.wav
     response:
@@ -556,11 +397,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -571,7 +412,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (11/15)
+    name: 语音增强质量评测 (8/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M05_442C0214_STR_REAL.wav
     response:
@@ -609,11 +450,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -624,7 +465,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (12/15)
+    name: 语音增强质量评测 (9/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F06_441C0210_PED_REAL.wav
     response:
@@ -662,64 +503,11 @@ pages:
     - '#2f9b5c'
     content:
     - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
+      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
+      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。<br><br>
     - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_M06_441C0203_PED_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: 语音增强质量评测 (13/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M06_441C0203_PED_REAL.wav
-    response:
-    -
-      - 很好
-      - 好
-      - 较好
-      - 较差
-      - 差
-    -
-      - 无失真
-      - 轻微失真
-      - 较失真
-      - 相当失真
-      - 极度失真
-    -
-      - 几乎无噪声
-      - 轻微噪声
-      - 有噪声但无干扰性
-      - 有一定干扰性
-      - 强干扰噪声
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M06_441C0203_PED_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M06_441C0203_PED_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M06_441C0203_PED_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M06_441C0203_PED_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M06_441C0203_PED_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M06_441C0203_PED_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M06_441C0203_PED_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
+      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意(1)：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。<br><strong>注意(2)：</strong>请根据每段音频中噪声的<strong>相对于语音的音量</strong>（而非绝对音量）来对该样本进行打分，因为不同音频的绝对音量很可能是不完全相同的。
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -730,7 +518,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: 语音增强质量评测 (14/15)
+    name: 语音增强质量评测 (10/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F06_446C0204_BUS_REAL.wav
     response:
@@ -761,59 +549,6 @@ pages:
       joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_446C0204_BUS_REAL.wav
       mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_446C0204_BUS_REAL.wav
       wav: ./configs/resources/wavs_stereo/wav/F06_446C0204_BUS_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - 分别播放 reference 和处理后的音频，然后对处理后的音频的<font color="red">整体质量</font>进行评估，即其中的语音信号是否很好地保留（无失真），同时背景噪声也被很好地抑制。<br>伴随着强干扰性噪声，且高度失真的语音，相应的得分是
-      0。几乎没有噪声，且无失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>reference 音频可能也包含一定噪声，处理后的音频中如果噪声更小则更好。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">语音质量</font>进行评估，即其中的语音信号是否很好地保留（无失真）。<br>高度失真的语音，相应的得分是
-      0。没有任何失真的语音，相应的得分是 100。<br><br><strong>注意：</strong>在评估 S-MOS 分数时，请<u>不要将背景噪声考虑在内</u>。
-    - 分别播放 reference 和处理后的音频，然后<strong>仅</strong>对处理后的音频中的<font color="red">噪声级别</font>进行评估，即其中的背景噪声是否很好地被抑制。<br>强干扰性噪声，相应的得分是
-      0。几乎无噪声，相应的得分是 100。<br><br><strong>注意：</strong>在评估 N-MOS 分数时，请<u>不要将语音信号的质量考虑在内</u>。
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_F06_441C020C_PED_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: 语音增强质量评测 (15/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F06_441C020C_PED_REAL.wav
-    response:
-    -
-      - 很好
-      - 好
-      - 较好
-      - 较差
-      - 差
-    -
-      - 无失真
-      - 轻微失真
-      - 较失真
-      - 相当失真
-      - 极度失真
-    -
-      - 几乎无噪声
-      - 轻微噪声
-      - 有噪声但无干扰性
-      - 有一定干扰性
-      - 强干扰噪声
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F06_441C020C_PED_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F06_441C020C_PED_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F06_441C020C_PED_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F06_441C020C_PED_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_441C020C_PED_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_441C020C_PED_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F06_441C020C_PED_REAL.wav
     type: multi_metric_mushra
 - content: 评测结束，请输入您的<strong>名字</strong>，并单击 [提交结果] 按钮。
   id: finish

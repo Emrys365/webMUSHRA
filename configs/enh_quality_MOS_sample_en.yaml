@@ -41,17 +41,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -62,7 +65,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (1/15)
+    name: Speech Enhancement Quality Evaluation (1/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M06_440C020J_PED_REAL.wav
     response:
@@ -106,82 +109,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_F05_444C020F_BUS_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (2/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F05_444C020F_BUS_REAL.wav
-    response:
-    -
-      - Excellent
-      - Good
-      - Fair
-      - Poor
-      - Bad
-    -
-      - Not Distorted
-      - Slightly Distorted
-      - Somewhat Distorted
-      - Fairly Distorted
-      - Very Distorted
-    -
-      - Not Noticeable
-      - Slightly Noticeable
-      - Noticeable But Not Intrusive
-      - Somewhat Intrusive
-      - Very Intrusive
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_444C020F_BUS_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_444C020F_BUS_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_444C020F_BUS_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_444C020F_BUS_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_444C020F_BUS_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_444C020F_BUS_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F05_444C020F_BUS_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - Listen to a reference audio and several processed audios.<br>Then evaluate the
-      <font color="red">overall quality</font> of the processed audio, i.e. whether
-      the speech signal is well preserved (undistorted), while the background noise
-      is well suppressed.<br>Highly distorted speech with very intrusive noise is
-      corresponding to 0. Undistorted speech without noticeable noise is corresponding
-      to 100.<br><br><strong>Note:</strong> The reference audio might also contain
-      some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">speech quality</font> in the processed audio, i.e.
-      whether the speech signal is well preserved (undistorted).<br>Highly distorted
-      speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
-      the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -192,7 +133,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (3/15)
+    name: Speech Enhancement Quality Evaluation (2/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F05_445C0214_STR_REAL.wav
     response:
@@ -236,17 +177,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -257,7 +201,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (4/15)
+    name: Speech Enhancement Quality Evaluation (3/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F06_443C0210_STR_REAL.wav
     response:
@@ -301,82 +245,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_M05_443C020O_BUS_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (5/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M05_443C020O_BUS_REAL.wav
-    response:
-    -
-      - Excellent
-      - Good
-      - Fair
-      - Poor
-      - Bad
-    -
-      - Not Distorted
-      - Slightly Distorted
-      - Somewhat Distorted
-      - Fairly Distorted
-      - Very Distorted
-    -
-      - Not Noticeable
-      - Slightly Noticeable
-      - Noticeable But Not Intrusive
-      - Somewhat Intrusive
-      - Very Intrusive
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M05_443C020O_BUS_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M05_443C020O_BUS_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M05_443C020O_BUS_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M05_443C020O_BUS_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M05_443C020O_BUS_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M05_443C020O_BUS_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M05_443C020O_BUS_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - Listen to a reference audio and several processed audios.<br>Then evaluate the
-      <font color="red">overall quality</font> of the processed audio, i.e. whether
-      the speech signal is well preserved (undistorted), while the background noise
-      is well suppressed.<br>Highly distorted speech with very intrusive noise is
-      corresponding to 0. Undistorted speech without noticeable noise is corresponding
-      to 100.<br><br><strong>Note:</strong> The reference audio might also contain
-      some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">speech quality</font> in the processed audio, i.e.
-      whether the speech signal is well preserved (undistorted).<br>Highly distorted
-      speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
-      the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -387,7 +269,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (6/15)
+    name: Speech Enhancement Quality Evaluation (4/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M05_440C0208_CAF_REAL.wav
     response:
@@ -431,17 +313,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -452,7 +337,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (7/15)
+    name: Speech Enhancement Quality Evaluation (5/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M06_442C020Y_CAF_REAL.wav
     response:
@@ -496,82 +381,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_F05_441C020E_CAF_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (8/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F05_441C020E_CAF_REAL.wav
-    response:
-    -
-      - Excellent
-      - Good
-      - Fair
-      - Poor
-      - Bad
-    -
-      - Not Distorted
-      - Slightly Distorted
-      - Somewhat Distorted
-      - Fairly Distorted
-      - Very Distorted
-    -
-      - Not Noticeable
-      - Slightly Noticeable
-      - Noticeable But Not Intrusive
-      - Somewhat Intrusive
-      - Very Intrusive
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F05_441C020E_CAF_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F05_441C020E_CAF_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F05_441C020E_CAF_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F05_441C020E_CAF_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F05_441C020E_CAF_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F05_441C020E_CAF_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F05_441C020E_CAF_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - Listen to a reference audio and several processed audios.<br>Then evaluate the
-      <font color="red">overall quality</font> of the processed audio, i.e. whether
-      the speech signal is well preserved (undistorted), while the background noise
-      is well suppressed.<br>Highly distorted speech with very intrusive noise is
-      corresponding to 0. Undistorted speech without noticeable noise is corresponding
-      to 100.<br><br><strong>Note:</strong> The reference audio might also contain
-      some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">speech quality</font> in the processed audio, i.e.
-      whether the speech signal is well preserved (undistorted).<br>Highly distorted
-      speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
-      the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -582,7 +405,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (9/15)
+    name: Speech Enhancement Quality Evaluation (6/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M05_446C0202_STR_REAL.wav
     response:
@@ -626,17 +449,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -647,7 +473,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (10/15)
+    name: Speech Enhancement Quality Evaluation (7/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F06_441C020S_CAF_REAL.wav
     response:
@@ -691,17 +517,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -712,7 +541,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (11/15)
+    name: Speech Enhancement Quality Evaluation (8/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/M05_442C0214_STR_REAL.wav
     response:
@@ -756,17 +585,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -777,7 +609,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (12/15)
+    name: Speech Enhancement Quality Evaluation (9/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F06_441C0210_PED_REAL.wav
     response:
@@ -821,82 +653,20 @@ pages:
       corresponding to 0. Undistorted speech without noticeable noise is corresponding
       to 100.<br><br><strong>Note:</strong> The reference audio might also contain
       some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
+      audios.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">speech quality</font> in the processed audio, i.e.
       whether the speech signal is well preserved (undistorted).<br>Highly distorted
       speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
+      Please <u>do not take account of the background noise</u> when evaluating S-MOS.<br><br>
     - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
       evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
       the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_M06_441C0203_PED_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (13/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/M06_441C0203_PED_REAL.wav
-    response:
-    -
-      - Excellent
-      - Good
-      - Fair
-      - Poor
-      - Bad
-    -
-      - Not Distorted
-      - Slightly Distorted
-      - Somewhat Distorted
-      - Fairly Distorted
-      - Very Distorted
-    -
-      - Not Noticeable
-      - Slightly Noticeable
-      - Noticeable But Not Intrusive
-      - Somewhat Intrusive
-      - Very Intrusive
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/M06_441C0203_PED_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/M06_441C0203_PED_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/M06_441C0203_PED_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/M06_441C0203_PED_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/M06_441C0203_PED_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/M06_441C0203_PED_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/M06_441C0203_PED_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - Listen to a reference audio and several processed audios.<br>Then evaluate the
-      <font color="red">overall quality</font> of the processed audio, i.e. whether
-      the speech signal is well preserved (undistorted), while the background noise
-      is well suppressed.<br>Highly distorted speech with very intrusive noise is
-      corresponding to 0. Undistorted speech without noticeable noise is corresponding
-      to 100.<br><br><strong>Note:</strong> The reference audio might also contain
-      some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">speech quality</font> in the processed audio, i.e.
-      whether the speech signal is well preserved (undistorted).<br>Highly distorted
-      speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
-      the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
+      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note 1:</strong>
+      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.<br><strong>Note
+      2:</strong> Please rate each audio based on the <strong>RELATIVE</strong> (not
+      absolute) noise volume compared to the speech, becuase the absolute volume of
+      different audios may not be exactly the same.
     createAnchor35: false
     createAnchor70: false
     enableLooping: true
@@ -907,7 +677,7 @@ pages:
     - N-MOS
     mustPlayAll: true
     mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (14/15)
+    name: Speech Enhancement Quality Evaluation (10/10)
     randomize: true
     reference: ./configs/resources/wavs_stereo/close_talk/F06_446C0204_BUS_REAL.wav
     response:
@@ -938,71 +708,6 @@ pages:
       joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_446C0204_BUS_REAL.wav
       mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_446C0204_BUS_REAL.wav
       wav: ./configs/resources/wavs_stereo/wav/F06_446C0204_BUS_REAL.wav
-    type: multi_metric_mushra
-  - colors:
-    - '#ED8C01'
-    - '#007ACC'
-    - '#2f9b5c'
-    content:
-    - Listen to a reference audio and several processed audios.<br>Then evaluate the
-      <font color="red">overall quality</font> of the processed audio, i.e. whether
-      the speech signal is well preserved (undistorted), while the background noise
-      is well suppressed.<br>Highly distorted speech with very intrusive noise is
-      corresponding to 0. Undistorted speech without noticeable noise is corresponding
-      to 100.<br><br><strong>Note:</strong> The reference audio might also contain
-      some noise. And it is preferred if the noise is further suppressed in the processed
-      audios.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">speech quality</font> in the processed audio, i.e.
-      whether the speech signal is well preserved (undistorted).<br>Highly distorted
-      speech is corresponding to 0. Undistorted speech is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the background noise</u> when evaluating S-MOS.
-    - Listen to a reference audio and several processed audios. <br>Then <strong>ONLY</strong>
-      evaluate <font color="red">noise level</font> in the processed audio, i.e. whether
-      the background noise is well suppressed.<br>Very intrusive noise is corresponding
-      to 0. Unnoticable noise is corresponding to 100.<br><br><strong>Note:</strong>
-      Please <u>do not take account of the speech quality</u> when evaluating N-MOS.
-    createAnchor35: false
-    createAnchor70: false
-    enableLooping: true
-    id: close_talk_F06_441C020C_PED_REAL
-    metrics:
-    - MOS
-    - S-MOS
-    - N-MOS
-    mustPlayAll: true
-    mustViewAllTabs: true
-    name: Speech Enhancement Quality Evaluation (15/15)
-    randomize: true
-    reference: ./configs/resources/wavs_stereo/close_talk/F06_441C020C_PED_REAL.wav
-    response:
-    -
-      - Excellent
-      - Good
-      - Fair
-      - Poor
-      - Bad
-    -
-      - Not Distorted
-      - Slightly Distorted
-      - Somewhat Distorted
-      - Fairly Distorted
-      - Very Distorted
-    -
-      - Not Noticeable
-      - Slightly Noticeable
-      - Noticeable But Not Intrusive
-      - Somewhat Intrusive
-      - Very Intrusive
-    showConditionNames: false
-    stimuli:
-      beam_tasnet_sig: ./configs/resources/wavs_stereo/beam_tasnet_sig/F06_441C020C_PED_REAL.wav
-      beam_tasnet_vad_mask: ./configs/resources/wavs_stereo/beam_tasnet_vad_mask/F06_441C020C_PED_REAL.wav
-      blstm_mvdr: ./configs/resources/wavs_stereo/blstm_mvdr/F06_441C020C_PED_REAL.wav
-      fasnet: ./configs/resources/wavs_stereo/fasnet/F06_441C020C_PED_REAL.wav
-      joint_mc_conv_tasnet_asr: ./configs/resources/wavs_stereo/joint_mc_conv_tasnet_asr/F06_441C020C_PED_REAL.wav
-      mc_conv_tasnet: ./configs/resources/wavs_stereo/mc_conv_tasnet/F06_441C020C_PED_REAL.wav
-      wav: ./configs/resources/wavs_stereo/wav/F06_441C020C_PED_REAL.wav
     type: multi_metric_mushra
 - content: The evaluation was finished.<br>Please enter your <strong>name</strong>.
     <br>Please click [send Results] button.
