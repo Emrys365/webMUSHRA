@@ -266,7 +266,8 @@ div.tab {
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  width: 100px;
+  min-width: 100px;
+  width: fit-content;
   height: 20px;
   position: relative;
   /* transition: 0.3s; */
@@ -289,7 +290,7 @@ div.tab {
   border-bottom: 1px solid transparent;
 }
 
-/* Style the tab content */
+/* Style of the tab content */
 .tabcontent {
   display: none;
   padding: 6px 12px;
@@ -299,3 +300,21 @@ div.tab {
   /* border-top: none; */
   text-align: left;
 }
+
+/* Style of the Exp table */
+#exp_table {
+  border-collapse: collapse;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+#exp_table th, #exp_table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+#exp_table th {
+  background-color: #f2f2f2;
+}
+
+#exp_table tr:nth-child(even){background-color: #f2f2f2;}

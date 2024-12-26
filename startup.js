@@ -13,10 +13,6 @@ function checkOrientation() {//when changing from potrait to landscape change to
 }
 
 window.onresize = function(event) {
-  if (pageManager.getCurrentPage() && pageManager.getCurrentPage().isMushra == true) {
-    pageManager.getCurrentPage().renderCanvas("mushra_items");
-  }
-
   checkOrientation();
 };
 
@@ -31,10 +27,10 @@ window.onresize = function(event) {
 
 // callbacks
 function callbackFilesLoaded() {
-  pageManager.start();
-  pageTemplateRenderer.renderProgressBar(("page_progressbar"));
-  pageTemplateRenderer.renderHeader(("page_header"));
-  pageTemplateRenderer.renderNavigation(("page_navigation"));
+  for (var i = 0; i < pageManagers.length; ++i) {
+    pageManagers[i].restart();
+    pageTemplateRenderer[i].renderHeader(("page_header" + (i + 1)));
+  }
 
   if (config.stopOnErrors == false || !errorHandler.errorOccurred()) {
     $.mobile.loading("hide");
@@ -53,6 +49,11 @@ function callbackFilesLoaded() {
   if ($.mobile.activePage) {
     $.mobile.activePage.trigger('create');
   }
+  // Focus on the first sample button in the first example page
+  pageManagers[0].getCurrentPage().bind();
+  var selector = '#buttonSamples0' + '[name="btnSample' + pageManagers[0].headerIndex + '"]';
+  $.mobile.activePage.find(selector).focus();
+  $(selector).attr("active", "true");
 }
 
 function callbackURLFound() {
@@ -65,61 +66,54 @@ function callbackURLFound() {
   $("#popupErrors").popup("open");
 }
 
-function addPagesToPageManager(_pageManager, _pages) {
+function addPageToPageManager(_pageManager, _page, _pageTemplateRenderer) {
   var pageCount = 0;
-  for (var i = 0; i < _pages.length; ++i) {
-    if (Array.isArray(_pages[i])) {
-      if (_pages[i][0] === "random") {
-        _pages[i].shift();
-        shuffle(_pages[i]);
-      }
-      addPagesToPageManager(_pageManager, _pages[i]);
-    } else {
-      var pageConfig = _pages[i];
-      if (pageConfig.type == "generic") {
-        _pageManager.addPage(new GenericPage(_pageManager, pageConfig));
-      } else if (pageConfig.type == "volume") {
-        var volumePage = new VolumePage(_pageManager, audioContext, audioFileLoader, pageConfig, config.bufferSize, errorHandler, config.language);
-        _pageManager.addPage(volumePage);
-      } else if (pageConfig.type == "mushra") {
-        pageCount++;
-        var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
-        _pageManager.addPage(mushraPage);
-      }  else if (pageConfig.type == "multi_metric_mushra") {
-        pageCount++;
-        var multiMetricMushraPage = new MultiMetricMushraPage(_pageManager, pageTemplateRenderer, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language, pageCount);
-        _pageManager.addPage(multiMetricMushraPage);
-      } else if ( pageConfig.type == "spatial"){
-        pageCount++;
-        _pageManager.addPage(new SpatialPage(_pageManager, pageConfig, session, audioContext, config.bufferSize, audioFileLoader, errorHandler, config.language));
-      } else if (pageConfig.type == "paired_comparison") {
-        pageCount++;
-        var pcPageManager = new PairedComparisonPageManager();
-        pcPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
-        pcPageManager = null;
-      } else if (pageConfig.type == "bs1116") {
-        pageCount++;
-        var bs1116PageManager = new BS1116PageManager();
-        bs1116PageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
-        bs1116PageManager = null;
-      } else if (pageConfig.type == "likert_single_stimulus") {
-        pageCount++;
-        var likertSingleStimulusPageManager = new LikertSingleStimulusPageManager();
-        likertSingleStimulusPageManager.createPages(_pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
-        likertSingleStimulusPageManager = null;
-      } else if (pageConfig.type == "likert_multi_stimulus") {
-        pageCount++;
-        var likertMultiStimulusPage = new LikertMultiStimulusPage(pageManager, pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
-        _pageManager.addPage(likertMultiStimulusPage);
-      } else if (pageConfig.type == "finish") {
-        var finishPage = new FinishPage(_pageManager, session, dataSender, pageConfig, config.language);
-        _pageManager.addPage(finishPage);
-      } else {
 
-        errorHandler.sendError("Type not specified.");
-
-      }
-    }
+  var pageConfig = _page;
+  if (pageConfig.type == "generic") {
+    _pageManager.addPage(new GenericPage(_pageManager, pageConfig));
+  } else if (pageConfig.type == "volume") {
+    var volumePage = new VolumePage(_pageManager, audioContext, audioFileLoader, pageConfig, config.bufferSize, errorHandler, config.language);
+    _pageManager.addPage(volumePage);
+  } else if (pageConfig.type == "mushra") {
+    pageCount++;
+    var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
+    _pageManager.addPage(mushraPage);
+  } else if (pageConfig.type == "multi_metric_mushra") {
+    pageCount++;
+    var multiMetricMushraPage = new MultiMetricMushraPage(_pageManager, _pageTemplateRenderer, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language, pageCount);
+    _pageManager.addPage(multiMetricMushraPage);
+  } else if (pageConfig.type == "multi_condition_demo") {
+    pageCount++;
+    var multiConditionDemoPage = new MultiConditionDemoPage(_pageManager, _pageTemplateRenderer, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language, pageCount);
+    _pageManager.addPage(multiConditionDemoPage);
+  } else if ( pageConfig.type == "spatial"){
+    pageCount++;
+    _pageManager.addPage(new SpatialPage(_pageManager, pageConfig, session, audioContext, config.bufferSize, audioFileLoader, errorHandler, config.language));
+  } else if (pageConfig.type == "paired_comparison") {
+    pageCount++;
+    var pcPageManager = new PairedComparisonPageManager();
+    pcPageManager.createPages(_pageManager, _pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+    pcPageManager = null;
+  } else if (pageConfig.type == "bs1116") {
+    pageCount++;
+    var bs1116PageManager = new BS1116PageManager();
+    bs1116PageManager.createPages(_pageManager, _pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+    bs1116PageManager = null;
+  } else if (pageConfig.type == "likert_single_stimulus") {
+    pageCount++;
+    var likertSingleStimulusPageManager = new LikertSingleStimulusPageManager();
+    likertSingleStimulusPageManager.createPages(_pageManager, _pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+    likertSingleStimulusPageManager = null;
+  } else if (pageConfig.type == "likert_multi_stimulus") {
+    pageCount++;
+    var likertMultiStimulusPage = new LikertMultiStimulusPage(pageManager, _pageTemplateRenderer, pageConfig, audioContext, config.bufferSize, audioFileLoader, session, errorHandler, config.language);
+    _pageManager.addPage(likertMultiStimulusPage);
+  } else if (pageConfig.type == "finish") {
+    var finishPage = new FinishPage(_pageManager, session, dataSender, pageConfig, config.language);
+    _pageManager.addPage(finishPage);
+  } else {
+    errorHandler.sendError("Type not specified.");
   }
 }
 
@@ -152,47 +146,75 @@ function startup(config) {
   }, 1);
   
   
-  if (pageManager !== null) { // clear everything for new experiment
-    pageTemplateRenderer.clear();
-    $("#page_content").empty();
+  if (pageManagers !== null) { // clear everything for new experiment
+    for (var i = 0; i < pageTemplateRenderer.length; ++i) {
+      pageTemplateRenderer[i].clear();
+    }
+    $("#pages").empty();
     $('#header').empty();
   }
 
   localizer = new Localizer();
   localizer.initializeNLSFragments(nls);
 
-  pageManager = null;
-  audioContext;
+  pageManagers = [];
+  audioContext = {};
   audioFileLoader = null;
   mushraValidator = null;
   dataSender = null;
   session = null;
-  pageTemplateRenderer = null;
+  pageTemplateRenderer = [];
   interval2 = null;
 
   document.title = config.testname;
   $('#header').append(document.createTextNode(config.testname));
 
-  pageManager = new PageManager("pageManager", "page_content", localizer);
+  config.pages = config.pages[0];
+  var pageContainer = $("#pages");
+  for (var i = 0; i < config.pages.length; ++i) {
+    var name = "page_header" + (i + 1);
+    pageContainer.append($('<h3 class="ui-bar ui-bar-a ui-corner-all" id="' + name + '"></h3>'));
+    var name = "page_content" + (i + 1);
+    // Use tabindex to make the each page focusable
+    pageContainer.append($('<div class="ui-body ui-body-a ui-corner-all" tabindex="0" id="' + name + '"></div>'));
+    pageManagers[pageManagers.length] = new PageManager("pageManagers[" + i + "]", name, localizer);
+    pageManagers[i].headerIndex = i + 1;
+  }
   window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-  if ( typeof AudioContext !== 'undefined') {
-    audioContext = new AudioContext();
-  } else if ( typeof webkitAudioContext !== 'undefined') {
-    audioContext = new webkitAudioContext();
+  keys = [16000, 48000];
+  for (var i = 0; i < keys.length; i++) {
+    if ( typeof AudioContext !== 'undefined') {
+      audioContext[keys[i]] = new AudioContext({sampleRate: keys[i]});
+    } else if ( typeof webkitAudioContext !== 'undefined') {
+      audioContext[keys[i]] = new webkitAudioContext();
+    }
   }
 
+  // for handling the error: The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page.
+  document.addEventListener("click", function () {
+    for (var key in audioContext) {
+      if (audioContext[key].state !== 'running') {
+        audioContext[key].resume();
+      }
+    }
+  }, true);
+
   try {
-    audioContext.destination.channelCountMode = "explicit";
-    audioContext.destination.channelInterpretation = "discrete";
-    audioContext.destination.channelCount = audioContext.destination.maxChannelCount;
+    for (var key in audioContext) {
+      audioContext[key].destination.channelCountMode = "explicit";
+      audioContext[key].destination.channelInterpretation = "discrete";
+      audioContext[key].destination.channelCount = audioContext[key].destination.maxChannelCount;
+    }
   } catch (e) {
     console.log("webMUSHRA: Could not set channel count of destination node.");
     console.log(e);
   }
-  audioContext.volume = 1.0;
+  for (var key in audioContext) {
+    audioContext[key].volume = 1.0;
+  }
 
-  audioFileLoader = new AudioFileLoader(audioContext, errorHandler);
+  audioFileLoader = new MultiAudioFileLoader(audioContext, errorHandler);
   mushraValidator = new MushraValidator(errorHandler);
   dataSender = new DataSender(config);
 
@@ -203,16 +225,17 @@ function startup(config) {
   if (config.language == undefined) {
     config.language = 'en';
   }
-  pageTemplateRenderer = new PageTemplateRenderer(pageManager, config.showButtonPreviousPage, config.language);
-  pageManager.addCallbackPageEventChanged(pageTemplateRenderer.refresh.bind(pageTemplateRenderer));
-
-  addPagesToPageManager(pageManager, config.pages);
+  for (var i = 0; i < config.pages.length; ++i) {
+    pageTemplateRenderer[pageTemplateRenderer.length] = new PageTemplateRenderer(pageManagers[i], config.showButtonPreviousPage, config.language);
+    pageManagers[i].addCallbackPageEventChanged(pageTemplateRenderer[i].refresh.bind(pageTemplateRenderer[i]));
+    
+    addPageToPageManager(pageManagers[i], config.pages[i], pageTemplateRenderer[i]);
+  }
 
   interval2 = setInterval(function() {
     clearInterval(interval2);
     audioFileLoader.startLoading(callbackFilesLoaded);
   }, 10);
-
 }
 
 // start code (loads config) 
@@ -235,7 +258,7 @@ if (configArg) {
 // global variables
 var errorHandler = new ErrorHandler();
 var localizer = null;
-var pageManager = null;
+var pageManagers = null;
 var audioContext = null;
 var audioFileLoader = null;
 var mushraValidator = null;
