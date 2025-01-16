@@ -12,7 +12,7 @@ a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikiped
 > 1. Add a new page type: [TaggingPage](lib/webmushra/pages/TaggingPage.js).
 > <br/>As shown below, this new page supports adding various pre-defined tags to for each audio sample.
 > <br/>And users can easily navigate between different audios by either using the shortcuts `[` and `]` or clicking the `<` and `>` buttons on the upper left.
-> <img width="1011" alt="screenshot of TaggingPage" src="https://github.com/user-attachments/assets/1f618220-d34d-4e8a-ac8e-0d6892c22ea0">
+> <br/><img width="1011" alt="screenshot of TaggingPage" src="https://github.com/user-attachments/assets/1f618220-d34d-4e8a-ac8e-0d6892c22ea0">
 >   * Several options are supported:
 >     * `audioList`: the path to a tsv file containing a list of audios.
 >     * `shuffleAudio`: whether to randomly shuffle the audio list for loading in a random order.
