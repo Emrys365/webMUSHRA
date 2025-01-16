@@ -366,6 +366,10 @@ div.tab {
 	text-align:center !important;
 }
 
+.noClick {
+  pointer-events: none;
+}
+
 /********************
     Settings style
 *********************/
