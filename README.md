@@ -8,13 +8,36 @@ a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikiped
 
 (Modified from the [kan-bayashi/webMUSHRA](https://github.com/kan-bayashi/webMUSHRA) repository)
 
-<img width="1011" alt="screen shot 2021-08-08 at 02 54 40" src="https://user-images.githubusercontent.com/18532145/128611084-57d4f393-a14e-4d8f-9929-552b7f11dc37.png">
-
 > ## New features
+> 1. Add a new page type: [TaggingPage](lib/webmushra/pages/TaggingPage.js).
+> <br/>As shown below, this new page supports adding various pre-defined tags to for each audio sample.
+> <br/>And users can easily navigate between different audios by either using the shortcuts `[` and `]` or clicking the `<` and `>` buttons on the upper left.
+> <img width="1011" alt="screenshot of TaggingPage" src="https://github.com/user-attachments/assets/1f618220-d34d-4e8a-ac8e-0d6892c22ea0">
+>   * Several options are supported:
+>     * `audioList`: the path to a tsv file containing a list of audios.
+>     * `shuffleAudio`: whether to randomly shuffle the audio list for loading in a random order.
+>     * `labelCache`: If true, the browser's localStorage will be used for storing and loading labeled tags in the past. This is useful for resuming the tagging process after the browser tab is closed.
+>     * `waveformColors`: define the colors of each part of the waveform for each audio. See [configs/default.yaml](configs/default.yaml) for an example.
+>     * `staticWaveform`: if false, the waveform will be refreshed during playing to reflect the player progress (this may cause laggy playing for long audios due to intensive computations); otherwise, the waveform will not be refreshed during playing (notPlayedColor will be ignored).
+>     * `showCursor`: whether to show a vertical cursor to indicate the current audio playing position
+>     * `showMetaInfo`: whether to show the meta information of each audio (if available) in the page.
+>     * `showSpectrogram`: whether to display the spectrogram of each audio (the original sampling rate will be used if loadOrigSR === true).
+>     * `spectrogramOptions`: the options for displaying the spectrogram. See [lib/webmushra/misc/AudioAnalyzer.js](lib/webmushra/misc/AudioAnalyzer.js) for more details.
+>     * `enableLooping`: whether to automatically play the audio in a loop.
+>     * `mustViewAllAudios`: f true, the Next button will be disabled until all audios have been tagged.
+>     * `normalizeVolume`: if not null, automatically rescale the volume of each audio so that its maximum absolute value is the specified value.
+>     * `tags`: a list of tags to be evaluated. See [configs/default.yaml](configs/default.yaml) for an example.
 > 
-> 1. Add a new page type: [MultiMetricMushraPage](lib/webmushra/pages/LikertSingleStimulusPageManager.js).
-> <br/>As shown above, this new page supports evaluating multiple metrics for each audio sample.
+> <br/>Different from other pages, the TaggingPage will load all its audios in a lazy mode rather than loading all audios at once. This is useful for handling a large number of audios (specified in `audioList`). A cache of loaded audios is also available (up to 10 most recently loaded audios; see [lib/webmushra/audio/AudioFileLoader.js](lib/webmushra/audio/AudioFileLoader.js)).
+>
+> The spectrogram and waveform visualization functions are totally refactored following the design in [https://github.com/sukumo28/vscode-audio-preview](https://github.com/sukumo28/vscode-audio-preview). The same interaction features are also supported, such jump playing by a single click, zoom in by dragging, reset zooming by a right cick, and meta keys (ctrl and shift) during dragging. Some bugs in spectrogram visualization in the original VSCode extension (e.g., color consistency in zoomed and default views) are also fixed.
+>
+> The new page works best on Google Chrome, but can also work in other browsers such as Safari.
+> 
+> 2. Add a new page type: [MultiMetricMushraPage](lib/webmushra/pages/MultiMetricMushraPage.js).
+> <br/>As shown below, this new page supports evaluating multiple metrics for each audio sample.
 > <br/>And users can easily navigate between different tabs by using the shortcuts `[` and `]`.
+> <br/><img width="1011" alt="screen shot 2021-08-08 at 02 54 40" src="https://user-images.githubusercontent.com/18532145/128611084-57d4f393-a14e-4d8f-9929-552b7f11dc37.png">
 >   * Several new options are added:
 >     * `colors`: a list of colors (HEX) corresponding to the background color of each metric tab.
 >     * `content`: a list of documentation corresponding to each metric.
@@ -25,8 +48,8 @@ a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikiped
 > 
 > <br/>In addition, the page number (i.e. `[page_index]/[total_page]`) in the page title will be automatically re-indexed for handling the randomized page order.
 > 
-> 2. Support opening the shortcuts cheatsheet on specific pages with the shortcut `/`.
-> <br/>Currently supported page(s): [MultiMetricMushraPage](lib/webmushra/pages/LikertSingleStimulusPageManager.js)
+> 3. Support opening the shortcuts cheatsheet on specific pages with the shortcut `/`.
+> <br/>Currently supported pages: [MultiMetricMushraPage](lib/webmushra/pages/MultiMetricMushraPage.js) and [TaggingPage](lib/webmushra/pages/TaggingPage.js)
 > <br/><details><summary>Expand to see an example</summary><div><img width="1011" alt="screen shot 2021-08-08 at 03 08 42" src="https://user-images.githubusercontent.com/18532145/128611385-1273d5d9-2d7a-4a28-9f57-169aaf434035.png"/></div></details>
 
 ## Introduction

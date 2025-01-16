@@ -29,7 +29,7 @@ pages:
     playedColor: '#A03CC8'  # color of waveform parts that are already played
     cursorColor: '#3478C6'  # color of the cursor for indicating the current audio playing position
     sliderColor: '#ED8C01'  # override color of the noUiSlider (used when enableLooping === true)
-  staticWaveform: true  # if false, the waveform will be refreshed during playing to reflect the player progress (this may cause laggy playing for long audios due to intensive computations); otherwise, the waveform will not be refreshed during playing (notPlayedColor will be ignored)
+  staticWaveform: true  # if false, the waveform will be refreshed during playing to reflect the player progress; otherwise, the waveform will not be refreshed during playing (notPlayedColor will be ignored)
   showCursor: true  # whether to show a vertical cursor to indicate the current audio playing position
   showMetaInfo: true  # whether to additionally display meta info (e.g., utterance ID) of each audio
   showSpectrogram: true  # whether to display the spectrogram of each audio (the original sampling rate will be used if loadOrigSR === true)

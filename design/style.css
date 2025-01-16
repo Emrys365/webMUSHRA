@@ -1,7 +1,7 @@
 /*************************************************************************
-         (C) Copyright AudioLabs 2017 
+         (C) Copyright AudioLabs 2017
 
-This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law. 
+This source code is protected by copyright law and international treaties. This source code is made available to You subject to the terms and conditions of the Software License for the webMUSHRA.js Software. Said terms and conditions have been made available to You prior to Your download of this source code. By downloading this source code You agree to be bound by the above mentionend terms and conditions, which can also be found here: https://www.audiolabs-erlangen.de/resources/webMUSHRA. Any unauthorised use of this source code may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law.
 
 **************************************************************************/
 
@@ -17,10 +17,10 @@ input[type=number] {
     -moz-appearance:textfield;
 }
 
-.ui-slider-track.ui-state-disabled {  
+.ui-slider-track.ui-state-disabled {
   opacity: 1.0;
   -webkit-filter: brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8)  brightness(1.05);
-  filter:  brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8)  brightness(1.05);  
+  filter:  brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8) brightness(1.1) contrast(0.8)  brightness(1.05);
 }
 
 .noUi-connect {
@@ -31,10 +31,10 @@ body {
   font-family: sans-serif,verdana,Helvetica,Arial;
   text-align:center;
   background-repeat: repeat-x;
-  background-position: 0 5em; 
+  background-position: 0 5em;
   background-color: #EEE;
-    
-} 
+
+}
 
 body.ui-mobile-viewport, div.ui-mobile-viewport {
 	overflow-x: scroll;
@@ -45,10 +45,10 @@ body.ui-mobile-viewport, div.ui-mobile-viewport {
 }
 
 
-#container {  
-	position: relative; 
-	top: 0%; 
-	margin-top: 0px; 
+#container {
+	position: relative;
+	top: 0%;
+	margin-top: 0px;
 	padding: 0 7%;
 }
 
@@ -67,13 +67,13 @@ body.ui-mobile-viewport, div.ui-mobile-viewport {
   margin: 0 auto;
   padding: .7em 0em;
   text-align: center;
-  
+
   background-image: -webkit-gradient(linear,left top,left bottom,from(#3C3C3C),to(#111));
   background-image: -webkit-linear-gradient(#3C3C3C,#111);
   background-image: -moz-linear-gradient(#3C3C3C,#111);
   background-image: -ms-linear-gradient(#3C3C3C,#111);
   background-image: -o-linear-gradient(#3C3C3C,#111);
-  background-image: linear-gradient(#3C3C3C,#111); 
+  background-image: linear-gradient(#3C3C3C,#111);
 
 }
 .default_padding {
@@ -101,7 +101,7 @@ img.logo {
 }
 
 table.logo {
-  margin-top: 0.8em;  
+  margin-top: 0.8em;
 }
 
 
@@ -177,13 +177,13 @@ td.stopButton {
 
 #page_progressbar {
   width: 30em;
-  height: 1em;  
+  height: 1em;
   margin:0.5em auto;
 }
 
 .fileplayer_progressbar {
   width: 10em;
-  height: 1.5em;    
+  height: 1.5em;
 }
 
 /* grey background of the wavesurfer behind the slider*/
@@ -198,19 +198,19 @@ td.stopButton {
 	margin : 0 auto;
 }
 
-/* justifications of the display of the slider values */ 
+/* justifications of the display of the slider values */
 .limits {
-	width:4em !important; 
+	width:4em !important;
 	text-align:center !important;
 }
 
 #div_lower_limit {
-	margin-right:1.5em; 
+	margin-right:1.5em;
 	margin-bottom:-12px;
 }
 
 #div_upper_limit {
-	margin-left:1.5em; 
+	margin-left:1.5em;
 	margin-bottom:-12px;
 }
 
@@ -299,3 +299,254 @@ div.tab {
   /* border-top: none; */
   text-align: left;
 }
+
+
+/********************
+    Tagging style
+*********************/
+
+#tagging_items {
+  border-spacing: 0.4em;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  /* justify-content: center; */
+}
+
+#tagging_items .tag-button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  color: #999;
+  box-shadow: none;
+  text-shadow: none;
+  cursor: pointer;
+  font-size: 1.0em;
+}
+
+#tagging_items .tag-button.active {
+  /* background-color: orange; */
+  /* border-color: #ff8c00; */
+  color: white;
+}
+
+.tagHeader {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.tabNavigation {
+  background-color: #f1f1f1;
+  float: left;
+  /* border: none;
+  border-radius:35px; */
+  border: 1px solid #999;
+  border-radius: 15px 15px 0 0;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  /* transition: 0.3s; */
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: none;
+}
+
+#div_tab_navigation {
+	margin-left: .5em;
+	margin-right: .5em;
+}
+.input_tab_navigation {
+	width:4em !important;
+	text-align:center !important;
+}
+
+/********************
+    Settings style
+*********************/
+
+.pageSettingButton {
+  /* background-color: #f1f1f1; */
+  float: right;
+  position: relative;
+  display: flex;
+  border: 3px solid transparent;
+  outline: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.pageSettingButton img {
+  max-width: 90%;
+  height: auto;
+  overflow: hidden;
+  display: block;
+  margin: auto;
+  opacity: 0.75;
+}
+
+.shadow {
+  filter: drop-shadow( 0px 0px 0.15rem rgba(0, 0, 0, .5));
+  /* Similar syntax to box-shadow */
+}
+
+/* Use -webkit- only if supporting: Chrome < 54, iOS < 9.3, Android < 4.4.4 */
+.unselectable {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/***********************************
+  Wavformer and spectrogram styles
+************************************/
+.wrapper {
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+
+#parentWavesurfer {
+  position: relative;
+  margin: 0.5em;
+}
+#parentSpectrogram {
+  position: relative;
+  margin: 0.5em;
+}
+
+.waveformSpecCanvas {
+  border: 1px solid black;
+}
+
+.playerCursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  border-right: 3px solid #007ACC;
+}
+
+/* For user interaction with canvas */
+.userInputDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.userSelectionRect {
+  position: absolute;
+  border: solid red;
+  border-width: 3px;
+  background-color: rgba(255, 0, 0, 0);
+  pointer-events: none;  /* to avoid interfering with the mouse events */
+  z-index: 2;
+}
+
+/********************
+    Toggle switch
+*********************/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.switchSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switchSlider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .switchSlider {
+  background-color: #57BE6A;
+}
+
+input:focus + .switchSlider {
+  box-shadow: 0 0 1px #57BE6A;
+}
+
+input:checked + .switchSlider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.switchSlider.round {
+  border-radius: 34px;
+}
+
+.switchSlider.round:before {
+  border-radius: 50%;
+}
+
+
+/********************
+ Github-style tables
+*********************/
+.ghTble {
+  border-collapse: collapse;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.ghTable th, .ghTable td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+.ghTable th {
+  background-color: #f2f2f2;
+}
+
+.ghTable tr:nth-child(odd){background-color: #f2f2f2;}

@@ -78,9 +78,15 @@ function addPagesToPageManager(_pageManager, _pages) {
       var pageConfig = _pages[i];
       if (pageConfig.type == "generic") {
         _pageManager.addPage(new GenericPage(_pageManager, pageConfig));
+      } else if (pageConfig.type == "generic_form") {
+        _pageManager.addPage(new GenericFormPage(_pageManager, pageConfig, session, pageTemplateRenderer));
       } else if (pageConfig.type == "volume") {
         var volumePage = new VolumePage(_pageManager, audioContext, audioFileLoader, pageConfig, config.bufferSize, errorHandler, config.language);
         _pageManager.addPage(volumePage);
+      } else if (pageConfig.type == "wave_spec_tagging") {
+        pageCount++;
+        var taggingPage = new TaggingPage(_pageManager, pageTemplateRenderer, audioContext, config.bufferSize, audioFileLoader, session, dataSender, pageConfig, mushraValidator, errorHandler, config.language, pageCount);
+        _pageManager.addPage(taggingPage);
       } else if (pageConfig.type == "mushra") {
         pageCount++;
         var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
@@ -143,7 +149,7 @@ function startup(config) {
   $.mobile.page.prototype.options.theme = 'a';
   var interval = setInterval(function() {
     $.mobile.loading("show", {
-      text : "Loading... (This may take some time)",
+      text : "Loading...",
       textVisible : true,
       theme : "a",
       html : ""
@@ -192,7 +198,7 @@ function startup(config) {
   }
   audioContext.volume = 1.0;
 
-  audioFileLoader = new AudioFileLoader(audioContext, errorHandler);
+  audioFileLoader = new AudioFileLoader(audioContext, errorHandler, config.loadOrigSR || false);
   mushraValidator = new MushraValidator(errorHandler);
   dataSender = new DataSender(config);
 
@@ -243,6 +249,7 @@ var dataSender = null;
 var session = null;
 var pageTemplateRenderer = null;
 var interval2 = null;
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 
 YAML.load(configFile, (function(result) {

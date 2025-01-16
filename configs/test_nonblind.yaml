@@ -3,6 +3,21 @@ language: en
 
 loadOrigSR: true  # whether to additionally load each audio in its original sampling rate
 pages:
+# - type: generic_form
+#   content: Welcome to speech data quality evaluation.<br/><br/>Please enter your <b>User Name</b> below and then click [Next] button to proceed.<br/><br/>
+#   id: welcome
+#   name: Speech data quality evaluation
+#   questionnaire:
+#   - label: User Name
+#     name: participant_name
+#     optional: false
+#     type: text
+#   - label: Passcode
+#     name: participant_passcode
+#     optional: false
+#     type: password
+#     minlength: 1
+#     maxlength: 10
 - type: generic
   id: welcome
   name: Speech data quality evaluation
@@ -19,19 +34,21 @@ pages:
   You can navigate to previous and next audios by clicking "&lt;" and "&gt;" buttons on the upper-left corner.'
   audioList: ../res/audios.tsv  # the first line must be header line
   shuffleAudio: false  # whether to randomly shuffle the audio loading order
-  localMode: false  # [Warning: don't set to true when deploying in a remote server] If true, the web page is assumed to be deployed in the same local machine as the user will use
-  localRootPath: "/absolute/path/to/this/project/root"  # Path to the root directory of this project (used only when localMode === true)
+  localMode: true  # [Warning: don't set to true when deploying in a remote server] If true, the web page is assumed to be deployed in the same local machine as the user will use
+  localRootPath: "/Users/wangyouz/Desktop/webMUSHRA"  # Path to the root directory of this project (used only when localMode === true)
   labelCache: true  # If true, the browser's localStorage will be used for storing and loading labeled tags in the past
   showWaveform: true  # whether to display the waveform of each audio
   waveformColors:
     unselectedColor: '#808080'  # color of unselected audio looping regions (used when enableLooping === true)
+    # notPlayedColor: '#F8DEBD'  # color of waveform parts that are not played yet
+    # notPlayedColor: '#A03CC8'  # color of waveform parts that are not played yet
     notPlayedColor: '#DFC1EA'  # color of waveform parts that are not played yet
     playedColor: '#A03CC8'  # color of waveform parts that are already played
     cursorColor: '#3478C6'  # color of the cursor for indicating the current audio playing position
     sliderColor: '#ED8C01'  # override color of the noUiSlider (used when enableLooping === true)
   staticWaveform: true  # if false, the waveform will be refreshed during playing to reflect the player progress (this may cause laggy playing for long audios due to intensive computations); otherwise, the waveform will not be refreshed during playing (notPlayedColor will be ignored)
   showCursor: true  # whether to show a vertical cursor to indicate the current audio playing position
-  showMetaInfo: true  # whether to additionally display meta info (e.g., utterance ID) of each audio
+  showMetaInfo: true  # whether to additionally display meta info (e.g., utterance ID and info provided in the `audioList` file) of each audio
   showSpectrogram: true  # whether to display the spectrogram of each audio (the original sampling rate will be used if loadOrigSR === true)
   spectrogramOptions:
     freqScale: linear  # linear, log, or mel
@@ -43,21 +60,29 @@ pages:
   remoteService: service/tagIO.php  # used for TSV file reading and writing (don't change this value)
   tags: # tags defined in one line - [...] will be displayed in a row
     - group: 'Data source'  # name to disply for this group of tags
-      names: ["real_recording", "enhanced", "synthetic"]  # tag names in this group
-      colors: ['#ED8C01', '#ED8C01', '#ED8C01']  # color of each tag in this group
-      descriptions: ["The audio is a real recording.", "The audio is enhanced by some SE algorithm.", "The audio is synthesized by some TTS algorithm."]  # text to display for each tag when hovered
-    - group: Speech type
-      names: ["non_speech", "read_speech", "spontaneous_speech", "whispered_speech", "vocal_sound", "emotional"]
-      colors: ['#007ACC', '#007ACC', '#007ACC', '#007ACC', '#007ACC', '#007ACC']
-      descriptions: ["The audio does not contain any speech.", "The audio contains reading-style speech.", "The audio contains spontaneous speech.", "The audio contains whispered speech.", "The audio contains non-speech vocal sounds such as cough, cry, and laughter.", "The audio contains emotional speech."]
+      names: ["high_intelligibility", "medium_intelligibility", "low_intelligibility", "real_recording", "simulated"]  # tag names in this group
+      colors: ['#ED8C01', '#ED8C01', '#ED8C01', '#007ACC', '#007ACC', '#007ACC']  # color of each tag in this group
+      descriptions: ["The speech content can be clearly heard (even with noise).", "The speech content can be understood by listening carefully.", "The speech content cannot be understood even when listening carefully.", "The audio is a real recording.", "The audio is simulated."]  # text to display for each tag when hovered
+    - group: Speech styles
+      names: ["reading_style", "spontaneous_style", "singing_voice"]
+      colors: ['#A03CC8', '#A03CC8', '#A03CC8']
+      descriptions: ["The audio contains reading-style speech.", "The audio contains spontaneous speech.", "The audio contains singing voices."]
     - group: Speaker attribute
-      names: ["male", "female", "Nspk", "overlap"]
-      colors: ['#2f9b5c', '#2f9b5c', '#4c0c9f', '#4c0c9f']
-      descriptions: ["The voice sounds like a male speaker", "The voice sounds like a female speaker.", ">1 types of voices appear sequentially in the audio.", "There are overlapped voices in the audio."]
-    - group: Noise and interference
-      names: ["nb_noise", "wb_noise", "instantaneous_noise", "music", "reverb", "distortion"]
-      colors: ['#99302b', '#99302b', '#99302b', '#99302b', '#99302b', '#99302b']
-      descriptions: ["Narrowband noise can be heard / seen from the spectrogram.", "Wideband noise can be heard / seen from the spectrogram.", "Noticeable reverberation can be heard / seen from the spectrogram.", "Music or sound effects can be heard.", "Distortion or artifacts can be heard / seen from the spectrogram."]
+      names: ["male", "female", "Nspk", "speech_overlap", "unison"]
+      colors: ['#2f9b5c', '#2f9b5c', '#4c0c9f', '#4c0c9f', '#4c0c9f']
+      descriptions: ["The voice sounds like a male speaker", "The voice sounds like a female speaker.", ">1 types of voices appear sequentially in the audio.", "There are overlapped voices in the audio.", "There is unison in the audio."]
+    - group: Distortion and interference
+      names: ["bandwidth_limitation", "clipping", "sound_effect", "music"]
+      colors: ['#99302b', '#99302b', '#99302b', '#99302b']
+      descriptions: ["Bandwidth limitation can be heard / seen from the spectrogram.", "Clipping can be heard / seen from the waveform", "Sound effects can be heard.", "Background music can be heard."]
+    - group: Noise
+      names: ["low_freq_noise", "high_freq_noise", "background_noise", "instantaneous_noise"]
+      colors: ['#99302b', '#99302b', '#99302b', '#99302b']
+      descriptions: ["Low-frequency narrow-band noise can be heard / seen from the spectrogram.", "High-frequency narrow-band noise can be heard / seen from the spectrogram.", "Wide-band background noise can be heard / seen from the spectrogram.", "Instantaneous noise can be heard / seen from the spectrogram."]
+    - group: Reverberation
+      names: ["weak_reverberation", "medium_reverberation", "strong_reverberation"]
+      colors: ['#EA513A', '#EA513A', '#EA513A']
+      descriptions: ["Weak reverberation exists in the audio.", "Medium-level reverberation exists in the audio.", "Strong reverberation exists in the audio."]
 - type: finish
   name: Thank you
   content: Thank you for attending!

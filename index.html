@@ -31,6 +31,7 @@ will be prosecuted to the maximum extent possible under law.
     <link type="text/css" href="lib/external/jquery.mobile/plugins/jQuery-Mobile-Icon-Pack/original/jqm-icon-pack-2.0-original.css" rel="stylesheet" />
     <link type="text/css" href="lib/external/wmSlider/slider.min.css" rel="stylesheet" />
     <link type="text/css" href="lib/external/wmSlider/slider.pips.css" rel="stylesheet" />
+    <link type="text/css" href="lib/external/toastify-js/toastify.min.css" rel="stylesheet" />
 
     <script src="lib/external/jquery/jquery-2.1.1.min.js"></script>
     <script src="lib/external/jquery.mobile/jquery.mobile-1.4.4.js"></script>
@@ -42,6 +43,16 @@ will be prosecuted to the maximum extent possible under law.
     <script src ="lib/external/three.js/three-tube/threejs-tube.js"></script>
     <script src ="lib/external/three.js/loaders/ColladaLoader.js"></script>
 
+    <!-- Ooura FFT -->
+    <script src="lib/external/ooura/ooura.min.js"></script>
+
+    <!-- Music-metadata -->
+    <script src="lib/external/aurora.js/aurora.min.js"></script>
+    <script src="lib/external/aurora.js-flac/flac.js"></script>
+    <script src="lib/external/aurora.js-mp3/mp3.js"></script>
+
+    <!-- toastify-js -->
+    <script src ="lib/external/toastify-js/toastify.min.js"></script>
 
     <!--noUiSlider -->
     <script src="lib/external/wmSlider/slider.min.js"></script>
@@ -61,12 +72,14 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/webmushra/audio/MushraAudioControl.js"></script>
     <script src="lib/webmushra/audio/MultiMetricMushraAudioControl.js"></script>
     <script src="lib/webmushra/audio/GenericAudioControl.js"></script>
+    <script src="lib/webmushra/audio/TagAudioControl.js"></script>
 
     <!-- business -->
     <script src="lib/webmushra/business/DataSender.js"></script>
     <script src="lib/webmushra/business/ErrorHandler.js"></script>
     <script src="lib/webmushra/business/PageManager.js"></script>
     <script src="lib/webmushra/business/PageTemplateRenderer.js"></script>
+    <script src="lib/webmushra/business/TagDataIO.js"></script>
 
     <!-- control -->
     <script src="lib/webmushra/control/MushraAudioControlInputController.js"></script>
@@ -74,6 +87,7 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/webmushra/control/BS1116AudioControlInputController.js"></script>
     <script src="lib/webmushra/control/FilePlayerController.js"></script>
     <script src="lib/webmushra/control/InputController.js"></script>
+    <script src="lib/webmushra/control/TagAudioControlInputController.js"></script>
 
     <!-- datamodel -->
     <script src="lib/webmushra/datamodel/BS1116Rating.js"></script>
@@ -84,6 +98,7 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/webmushra/datamodel/Participant.js"></script>
     <script src="lib/webmushra/datamodel/Session.js"></script>
     <script src="lib/webmushra/datamodel/Stimulus.js"></script>
+    <script src="lib/webmushra/datamodel/TagResponse.js"></script>
     <script src="lib/webmushra/datamodel/Trial.js"></script>
     <script src="lib/webmushra/datamodel/SpatialLocalizationRating.js"></script>
     <script src="lib/webmushra/datamodel/SpatialASWRating.js"></script>
@@ -100,6 +115,8 @@ will be prosecuted to the maximum extent possible under law.
     <!-- misc -->
     <script src="lib/webmushra/misc/MushraValidator.js"></script>
     <script src="lib/webmushra/misc/WaveformVisualizer.js"></script>
+    <script src="lib/webmushra/misc/WaveformSpecVisualizer.js"></script>
+    <script src="lib/webmushra/misc/AudioAnalyzer.js"></script>
     <script src="lib/webmushra/misc/LikertScale.js"></script>
     <script src="lib/webmushra/misc/FilePlayer.js"></script>
     <script src="lib/webmushra/misc/Localizer.js"></script>
@@ -110,6 +127,7 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/webmushra/pages/BS1116PageManager.js"></script>
     <script src="lib/webmushra/pages/FinishPage.js"></script>
     <script src="lib/webmushra/pages/GenericPage.js"></script>
+    <script src="lib/webmushra/pages/GenericFormPage.js"></script>
     <script src="lib/webmushra/pages/MushraPage.js"></script>
     <script src="lib/webmushra/pages/MultiMetricMushraPage.js"></script>
     <script src="lib/webmushra/pages/PairedComparisonPage.js"></script>
@@ -119,6 +137,7 @@ will be prosecuted to the maximum extent possible under law.
     <script src="lib/webmushra/pages/LikertSingleStimulusPageManager.js"></script>
     <script src="lib/webmushra/pages/LikertMultiStimulusPage.js"></script>
     <script src="lib/webmushra/pages/SpatialPage.js"></script>
+    <script src="lib/webmushra/pages/TaggingPage.js"></script>
 
     <script src="lib/webmushra/nls/nls.js"></script>
     <!-- /build -->
@@ -145,7 +164,7 @@ will be prosecuted to the maximum extent possible under law.
 
     <table align="right" class="logo">
       <tr>
-        <td class="logo" style="vertical-align:top; padding-right:0px;"><small><strong>webMUSHRA
+        <td class="logo" style="vertical-align:top; padding-right:0px;"><small><strong>Modified from webMUSHRA
             <!-- build:template:dev
             Dev
             /build -->
@@ -162,11 +181,14 @@ will be prosecuted to the maximum extent possible under law.
 
     </div>
     <div data-role="popup" data-dismissible="false" data-history="false" data-transition="flip" positionTo="window" id="popupErrors">
-      <div id="popupErrorsContent">Errors:<br/></div>
+      <div data-role="header" class="ui-corner-top"  style="background-color: #FFb500;">
+        <h1 id="popErrorHeader">Errors</h1>
+      </div>
+      <div id="popupErrorsContent"><br/>The following errors occurred:<br/></div>
     </div>
 
     <div data-role="popup" data-history="false" data-position-to="#page_content" data-transition="slidedown" id="popupDialog" data-overlay-theme="a" data-theme="c" data-dismissible="false" class="ui-corner-all">
-      <div data-role="header" class="ui-corner-top"  style="width : 57.5em; background-color: #FFb500;">
+      <div data-role="header" class="ui-corner-top"  style="background-color: #FFb500;">
         <h1 id="popHeader"></h1>
       </div>
     <div id="popupResultsContent" style="background-color: white;" class="ui-corner-bottom ui-content">
@@ -180,6 +202,14 @@ will be prosecuted to the maximum extent possible under law.
     <div id="popupShortcuts" style="background-color: white;" class="ui-corner-bottom ui-content">
     </div>
   </div>
+
+  <div data-role="popup" data-history="false" data-position-to="window" data-transition="pop" id="settingsPopupCard" data-overlay-theme="b" data-theme="c" data-dismissible="true" class="ui-corner-all">
+    <div data-role="header" class="ui-corner-top"  style="background-color: #FFb500;">
+      <h1 id="settingsPopHeader">Settings</h1>
+    </div>
+  <div id="popupSettings" style="background-color: white;" class="ui-corner-bottom ui-content">
+  </div>
+</div>
     <!-- build:js:generic startup.min.js -->
     <script src="startup.js"></script>
     <!-- /build -->
