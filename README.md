@@ -30,7 +30,7 @@ a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikiped
 > 
 > <br/>Different from other pages, the TaggingPage will load all its audios in a lazy mode rather than loading all audios at once. This is useful for handling a large number of audios (specified in `audioList`). A cache of loaded audios is also available (up to 10 most recently loaded audios; see [lib/webmushra/audio/AudioFileLoader.js](lib/webmushra/audio/AudioFileLoader.js)).
 >
-> The spectrogram and waveform visualization functions are totally refactored following the design in [https://github.com/sukumo28/vscode-audio-preview](https://github.com/sukumo28/vscode-audio-preview). The same interaction features are also supported, such jump playing by a single click, zoom in by dragging, reset zooming by a right cick, and meta keys (ctrl and shift) during dragging. Some bugs in spectrogram visualization in the original VSCode extension (e.g., color consistency in zoomed and default views) are also fixed.
+> The spectrogram and waveform visualization functions are totally refactored following the design in [https://github.com/sukumo28/vscode-audio-preview](https://github.com/sukumo28/vscode-audio-preview). The same interaction features are also supported, such as jump playing by a single click, zoom in by dragging, reset zooming by a right cick, and meta keys (ctrl and shift) during dragging. Some bugs in spectrogram visualization in the original VSCode extension (e.g., color consistency in zoomed and default views) are also fixed.
 >
 > The new page works best on Google Chrome, but can also work in other browsers such as Safari.
 > 
