@@ -9,8 +9,8 @@ a MUltiple Stimuli with Hidden Reference and Anchor ([MUSHRA](https://en.wikiped
 (Modified from the [kan-bayashi/webMUSHRA](https://github.com/kan-bayashi/webMUSHRA) repository)
 
 > ## New features
-> 1. Add a new page type: [TaggingPage](lib/webmushra/pages/TaggingPage.js).
-> <br/>As shown below, this new page supports adding various pre-defined tags to for each audio sample.
+> 1. Add new page types: [TaggingPage](lib/webmushra/pages/TaggingPage.js) and [TaggingDemoPage](lib/webmushra/pages/TaggingDemoPage.js).
+> <br/>As shown below, the former supports adding various pre-defined tags to for each audio sample, and the latter is a read-only version of the former for demonstration purposes.
 > <br/>And users can easily navigate between different audios by either using the shortcuts `[` and `]` or clicking the `<` and `>` buttons on the upper left.
 > <br/><img width="1011" alt="screenshot of TaggingPage" src="https://github.com/user-attachments/assets/1f618220-d34d-4e8a-ac8e-0d6892c22ea0">
 >   * Several options are supported:
