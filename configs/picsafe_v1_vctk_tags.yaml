@@ -1,0 +1,70 @@
+bufferSize: 2048
+language: en
+
+loadOrigSR: true  # whether to additionally load each audio in its original sampling rate
+pages:
+- type: generic
+  id: welcome
+  name: PICSAFE v1
+  content: Welcome to check the PICSAFE v1 data.<br/><br/>Please click [Next] button to proceed.<br/><br/>
+- type: wave_spec_tagging_demo
+  id: picsafe_v1_tagging
+  name: Speech Data Quality Tagging (1/10)
+  content: 'You can listen to the given audio in each page, and check the corresponding spectrogram / manually-annotated tags.
+  You can navigate to previous and next audios by clicking "&lt;" and "&gt;" buttons on the upper-left corner.'
+  audioList: ../res/vctk.tsv  # the first line must be header line
+  shuffleAudio: false  # whether to randomly shuffle the audio loading order
+  localMode: false  # [Warning: don't set to true when deploying in a remote server] If true, the web page is assumed to be deployed in the same local machine as the user will use
+  localRootPath: ""  # Path to the root directory of this project (used only when localMode === true)
+  labelCache: true  # If true, the browser's localStorage will be used for storing and loading labeled tags in the past
+  showWaveform: true  # whether to display the waveform of each audio
+  waveformColors:
+    unselectedColor: '#808080'  # color of unselected audio looping regions (used when enableLooping === true)
+    # notPlayedColor: '#F8DEBD'  # color of waveform parts that are not played yet
+    # notPlayedColor: '#A03CC8'  # color of waveform parts that are not played yet
+    notPlayedColor: '#DFC1EA'  # color of waveform parts that are not played yet
+    playedColor: '#A03CC8'  # color of waveform parts that are already played
+    cursorColor: '#3478C6'  # color of the cursor for indicating the current audio playing position
+    sliderColor: '#ED8C01'  # override color of the noUiSlider (used when enableLooping === true)
+  staticWaveform: true  # if false, the waveform will be refreshed during playing to reflect the player progress (this may cause laggy playing for long audios due to intensive computations); otherwise, the waveform will not be refreshed during playing (notPlayedColor will be ignored)
+  showCursor: true  # whether to show a vertical cursor to indicate the current audio playing position
+  showMetaInfo: true  # whether to additionally display meta info (e.g., utterance ID and info provided in the `audioList` file) of each audio
+  showSpectrogram: true  # whether to display the spectrogram of each audio (the original sampling rate will be used if loadOrigSR === true)
+  spectrogramOptions:
+    freqScale: linear  # linear, log, or mel
+    fixedDurationWinSize: false  # whether to adaptively adjust the window size according to the actual sample rate to keep the duration fixed
+  enableLooping: true  # whether to show a scaler for adjusting the segment for looping
+  autoLooping: false  # whether to replay from the beginning after playing is finished
+  mustViewAllAudios: true  # whether to disable the next page button until all audios are tagged
+  normalizeVolume: 0.9  # if not null, automatically rescale the volume of each audio so that its maximum absolute value is the specified value
+  remoteService: service/tagIO.php  # used for TSV file reading and writing (don't change this value)
+  tags: # tags defined in one line - [...] will be displayed in a row
+    - group: 'Data source'  # name to disply for this group of tags
+      names: ["real_recording", "synthetic", "enhanced"]  # tag names in this group
+      colors: ['#007ACC', '#007ACC', '#007ACC']  # color of each tag in this group
+      descriptions: ["The audio is a real recording without additional preprocessing.", "The audio is possibly synthetic speech.", "The audio is processed by SE models"]  # text to display for each tag when hovered
+    - group: Speech styles
+      names: ["non_speech", "whispered_speech", "read_speech", "spontaneous_speech", "singing_voice", "vocal_sound", "emotional"]
+      colors: ['#A03CC8', '#A03CC8', '#A03CC8', '#A03CC8', '#A03CC8', '#A03CC8', '#A03CC8']
+      descriptions: ["The audio does not contain any intelligible speech.", "The audio contsins whispered speech.", "The audio contains reading-style speech.", "The audio contains spontaneous speech.", "The audio contains singing voices", "The audio contains vocal sounds like laughter, cough, cry, etc.", "The audio contains emotional voice."]
+    - group: Speaking rate and pitch
+      names: ["regular_speed", "slow_speed", "fast_speed", "regular_pitch", "low_pitch", "high_pitch"]
+      colors: ['#5A30C1', '#5A30C1', '#5A30C1', '#5A30C1', '#5A30C1', '#5A30C1']
+      descriptions: ["The voice is in a regular speed.", "The voice is in a slow speed.", "The voice is in a fast speed.", "The voice is in a regular pitch.", "The voice is in a low pitch (e.g., bass).", "The voice is in a high pitch (e.g., falsetto)."]
+    - group: Speaker attribute
+      names: ["male", "female", "non_binary", "Nspk", "speech_overlap"]
+      colors: ['#2f9b5c', '#2f9b5c', '#2f9b5c', '#4c0c9f', '#4c0c9f']
+      descriptions: ["The voice sounds like a male speaker", "The voice sounds like a female speaker.", "The voice is from a non-binary speaker.", ">1 types of voices appear sequentially in the audio.", "There are overlapped voices in the audio."]
+    - group: Noise
+      names: ["nb_noise", "wb_noise", "instantaneous_noise", "imperceptible_noise_level", "low_noise_level", "mid_high_noise_level"]
+      colors: ['#99302b', '#99302b', '#99302b', '#EA513A', '#EA513A', '#EA513A']
+      descriptions: ["Narrow-band noise can be heard / seen from the spectrogram.", "Wide-band noise can be heard / seen from the spectrogram.", "Instantaneous noise can be heard / seen from the spectrogram.", "The noise is imperceptible.", "The noise is very weak.", "The noise is easily perceptible."]
+    - group: Reverberation, Distortion, and other interferences
+      names: ["reverberation", "music_or_effect", "microphone_popping", "excessive_sibilance", "distortion", "wrong_transcript"]
+      colors: ['#99302b', '#99302b', '#99302b', '#99302b', '#99302b', '#99302b']
+      descriptions: ["Perceptible reverberation exists in the audio", "Music or sound effects can be heard.", "Microphone popping sounds can be heard.", "Unpleasant voice like harsh esses can be heard.", "Other distortions or artifacts can be heard.", "The audio transcript is mismatched."]
+remoteService: service/tsvWrite.php
+showButtonPreviousPage: true
+stopOnErrors: true
+testId: picsafe_v1_demo
+testname: PICSAFE v1 demo

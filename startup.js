@@ -87,6 +87,10 @@ function addPagesToPageManager(_pageManager, _pages) {
         pageCount++;
         var taggingPage = new TaggingPage(_pageManager, pageTemplateRenderer, audioContext, config.bufferSize, audioFileLoader, session, dataSender, pageConfig, mushraValidator, errorHandler, config.language, pageCount);
         _pageManager.addPage(taggingPage);
+      } else if (pageConfig.type == "wave_spec_tagging_demo") {
+        pageCount++;
+        var taggingDemoPage = new TaggingDemoPage(_pageManager, pageTemplateRenderer, audioContext, config.bufferSize, audioFileLoader, session, dataSender, pageConfig, mushraValidator, errorHandler, config.language, pageCount);
+        _pageManager.addPage(taggingDemoPage);
       } else if (pageConfig.type == "mushra") {
         pageCount++;
         var mushraPage = new MushraPage(_pageManager, audioContext, config.bufferSize, audioFileLoader, session, pageConfig, mushraValidator, errorHandler, config.language);
